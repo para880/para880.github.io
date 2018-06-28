@@ -1,0 +1,419 @@
+<!--    Company     Anabas,Inc.
+        Author      Hong Zhou
+        Version     1.0.0
+        Date        3-14-01
+        Description This is the page to get feedback information from users.
+-->
+<html>
+<head>
+<title>feedback</title>
+<style type="text/css">
+
+<!--
+
+.black{  font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: normal; color: #000000; text-decoration: none}
+
+.blackl{  font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: normal; color: #000000; text-decoration: none}
+
+-->
+</style>
+<script language="javascript">
+<!--
+function mOvr(src,clrOver){ 
+	if (!src.contains(event.fromElement)){ 
+		src.style.cursor = 'hand'; 
+		src.bgColor = clrOver; 
+	} 
+} 
+function mOut(src,clrIn){ 
+	if (!src.contains(event.toElement)){ 
+		src.style.cursor = 'default'; 
+		src.bgColor = clrIn; 
+	} 
+} 
+function mClk(src){ 
+	if(event.srcElement.tagName=='TD')
+		src.children.tags('A')[0].click();
+}
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</SCRIPT>
+
+</head>
+
+<body bgcolor="#000099">
+<%@ page import="java.util.*" %> <%@ page contentType="text/html" %> <%@ page session="true" %> 
+<%@ page autoflush="true" %> <%@ page info="Feed back JSP file" %> <%@ page isThreadSafe="false" %> 
+<%@ page errorPage="<%=System.getProperty("anabas.vcm.errorpage")%> <%  String defaultMessage = "Please type your comments here";  %> 
+<table align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" width="644" height="84">        		
+	<tr height="84">
+		<td><a href="home.html"><img src="images/anabas.gif" width="644" height="84" border="0"></a></td>
+	</tr>
+</table>
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="640" height="100%">	
+	<tr>
+		<td width="640">
+			<table cellpadding="0" cellspacing="0" border="0" width="640" height="100%">
+    			<tr>
+					<td>									
+       					<table  bgcolor="#FFFFFF" width="644" height="100%" cellpadding="0" cellspacing="0" border="0">
+           					<tr>
+								<td width="77" valign="top"><img src="images/pattern.jpg" width="77" height="290"></td>											
+                       			<td width="527">
+                          			<table border="0" cellspacing="0" cellpadding="0" width="560" height="100%">
+                            			<tr>
+											<td height="50">
+											<img src="images/feedback.gif" width="190" height="30"></td>
+										</tr>
+										<tr>
+											<td height="100%">
+<!-- form starts here -->
+											<center>
+											<form action="getfeedback.jsp" align="left">	
+												<table width=460 border=0 cellspacing=0 cellpadding=2>
+													<tr>
+														<td width="160">
+														<div align="right"><span class="black">Name</span></div>
+														</td>
+														<TD WIDTH="20"></TD>
+														<td width=280 colspan=2> <span class="black"><input type="text" name="COMPANYNAME" value="" size="30"></span>
+														</td>
+													</tr>
+													<tr>
+														<td width="160">
+														<div align="right"><span class="black">Company Name</span></div>
+														</td>
+														<TD WIDTH="20"></TD>
+														<td width=280 colspan=2><span class="black"> <input type="text" name="NAME" value="" size="30"></span>
+														</td>
+													</tr>
+													<tr>
+														<td width="160">
+														<div align="right"><span class="black">Email</span></div>
+														</td>
+														<TD WIDTH="20"></TD>
+														<td width=280 colspan=2> <span class="black"><input type="text" name="TITLE" value="" size="30"></span>
+														</td>
+													</tr>
+													<tr>
+														<td width="160">
+														<div align="right"><span class="black">Computer Operating System</span></div>
+														</td>
+														<TD WIDTH="20"></TD>
+														
+                                <td width=280 colspan=2> <span class="black">
+                                  <select name="os">
+                                    <option>Windows 95</option>
+                                    <option>Windows 98</option>
+                                    <option>Windows NT</option>
+                                    <option>Windows 2000</option>
+                                  </select>
+                                  </span> </td>
+													</tr>
+													<tr>
+														<td width="160">
+														<div align="right"><span class="black">Language</span></div>
+														</td>
+														<TD WIDTH="20"></TD>
+														
+                                <td width=280 colspan=2> <span class="black">
+                                  <select name="language">
+                                    <option>English</option>
+                                    <option>Japanese</option>
+                                    <option>Chinese</option>
+                                  </select>
+                                  </span> </td>
+													</tr>
+													<tr>
+														<td width="160">
+														<div align="right"><span class="black">Profession</span></div>
+														</td>
+														<TD WIDTH="20"></TD>
+														
+                                <td width=280 colspan=2><span class="black">
+                                  <select name="select">
+                                    <option>Engineering</option>
+                                    <option>Legal</option>
+                                    <option>Business Development</option>
+                                    <option>Marketing</option>
+                                    <option>Sales</option>
+                                    <option>Technical Support</option>
+                                    <option>Student</option>
+                                    <option>Instructor</option>
+                                    <option>System Administration</option>
+                                  </select>
+                                  </span> </td>
+													</tr>
+													<tr>
+														<td width="160">
+														<div align="right"><span class="black">Role</span></div>
+														</td>
+														<TD WIDTH="20"></TD>
+														
+                                <td width=280 colspan=2> <span class="black">
+                                  <select name="select2">
+                                    <option>Participants/Invitee</option>
+                                    <option>Host</option>
+                                  </select>
+                                  </span> </td>
+													</tr>													
+												</table>												
+                            					<table width="460" cellpadding="0" cellspacing="0" border="0">
+													<tr>
+														<td><p><br><br><br><span class="black">Did you experience any technical difficulty while using our system?</span>
+                                  						<select name="technical">
+                                      					<option>Internet Audio</option>
+                                      					<option>Phone Audio</option>
+                                      					<option>Sharing Documents</option>
+                                      					<option>Remote Control</option>
+                                      					<option>Instant Message</option>
+                                      					<option>Text Chat</option>
+                                      					<option>&quot;Browse&quot; document to share</option>
+                                    					</select>
+                                						</td>
+													</tr>
+													
+                              						<tr>
+														<td>
+														<p><BR><span class="black">Please elaborate if there are any problems</span>
+														<span class="black">
+														<input type="hidden" name="DEFAULT" value="">
+	                              						<textarea name="problem" rows="3" cols="60"></textarea></span>
+														</td>
+													</tr>													
+													<tr>
+														<td><p><br><span class="black">Please rate the application and whether you would use</span>
+                                  						<span class="black"><select name="presentation">
+                                      					<option>Online sales presentation</option>
+                                      					<option>Yes</option>
+                                      					<option>No</option>
+                                      					<option>Maybe</option>                                      					
+                                    					</select><br>
+														<select name="support">
+                                      					<option>Online technical support</option>
+                                      					<option>Yes</option>
+                                      					<option>No</option>
+                                      					<option>Maybe</option>                                      					
+                                    					</select><br>
+														<select name="meetings">
+                                      					<option>Online meetings</option>
+                                      					<option>Yes</option>
+                                      					<option>No</option>
+                                      					<option>Maybe</option>                                      					
+                                    					</select><br>
+														<select name="education">
+                                      					<option>Online education</option>
+                                      					<option>Yes</option>
+                                      					<option>No</option>
+                                      					<option>Maybe</option>                                      					
+                                    					</select>
+														</span>
+														<p><span class="black">If none of the above, what can we do to make the application useful for online collaboration in your field?</span>
+                                						<span class="black">
+                                    					<input type="text" name="textfield" size="47">
+                                    					</span>
+														</td>
+													</tr>
+													<tr>
+														<td><p><br><span class="black">If yes, what is the maximum you would be willing to pay for a 1 hour meeting inside the U.S.(Excluding phone charges if using a phone):</span>
+                                  						<span class="black">
+                                    					<select name="select3">
+                                      					<option>$0.10/minute per person [ Roughly 
+                                      					$24 / hour for 4 people ]</option>
+                                      					<option>$0.20/minute per person [ Roughly 
+                                      					$48 / hour for 4 people ]</option>
+                                      					<option>$0.30/minute per person [ Roughly 
+                                      					$72 / hour for 4 people ]</option>
+                                      					<option>$0.40/minute per person [ Roughly 
+                                      					$96 / hour for 4 people ]</option>
+                                      					<option>$0.50/minute per person [ Roughly 
+                                      					$120 / hour for 4 people ]</option>
+                                    					</select>
+                                    					</span>													
+														</td>
+													</tr>
+													<tr>
+														<td><p><br><br><br><span class="black"><b>Application:</b><br><br>Please check those features that you experienced during the meeting:</span>
+                                  						<span class="black"> 
+                                   						<select name="whiteboard">
+														<option>Whiteboard</option>
+                                      					<option>Didn't try</option>
+                                      					<option>Didn't work</option>
+                                      					<option>Not useful</option>
+                                      					<option>Somewhat useful</option>
+                                      					<option>Useful</option>
+                                      					<option>Very useful</option>
+                                    					</select><br>
+														<select name="presentation">
+														<option>Sharing Presentations</option>
+                                      					<option>Didn't try</option>
+                                      					<option>Didn't work</option>
+                                      					<option>Not useful</option>
+                                      					<option>Somewhat useful</option>
+                                      					<option>Useful</option>
+                                      					<option>Very useful</option>
+                                    					</select><br>
+														<select name="remote">
+														<option>Remote Control/Collaborative Document Edit</option>
+                                      					<option>Didn't try</option>
+                                      					<option>Didn't work</option>
+                                      					<option>Not useful</option>
+                                      					<option>Somewhat useful</option>
+                                      					<option>Useful</option>
+                                      					<option>Very useful</option>
+                                    					</select><br>
+														<select name="message">
+														<option>Instant Message</option>
+                                      					<option>Didn't try</option>
+                                      					<option>Didn't work</option>
+                                      					<option>Not useful</option>
+                                      					<option>Somewhat useful</option>
+                                      					<option>Useful</option>
+                                      					<option>Very useful</option>
+                                    					</select><br>
+														<select name="chat">
+														<option>Text Chat</option>
+                                      					<option>Didn't try</option>
+                                      					<option>Didn't work</option>
+                                      					<option>Not useful</option>
+                                      					<option>Somewhat useful</option>
+                                      					<option>Useful</option>
+                                      					<option>Very useful</option>
+                                    					</select><br>
+														<select name="audio">
+														<option>Internet Audio</option>
+                                      					<option>Didn't try</option>
+                                      					<option>Didn't work</option>
+                                      					<option>Not useful</option>
+                                      					<option>Somewhat useful</option>
+                                      					<option>Useful</option>
+                                      					<option>Very useful</option>
+                                    					</select><br>
+														<select name="phone">
+														<option>Phone dial in</option>
+                                      					<option>Didn't try</option>
+                                      					<option>Didn't work</option>
+                                      					<option>Not useful</option>
+                                      					<option>Somewhat useful</option>
+                                      					<option>Useful</option>
+                                      					<option>Very useful</option>
+                                    					</select><br>
+														<select name="promotion">
+														<option>Promotion to Presenter(if you are not the host)</option>
+                                      					<option>Didn't try</option>
+                                      					<option>Didn't work</option>
+                                      					<option>Not useful</option>
+                                      					<option>Somewhat useful</option>
+                                      					<option>Useful</option>
+                                      					<option>Very useful</option>
+                                    					</select>
+                                    					</span>													
+														</td>
+													</tr>
+													<tr>
+														<td>
+														<p><BR><span class="black">What can we do to make it better?</span>
+														<div align="left"><span class="black">
+														<input type="hidden" name="DEFAULT" value="">
+	                              						<textarea name="features" rows="3" cols="60"></textarea></span></div>
+														</td>
+													</tr>	
+													<tr>
+														<td><p><br><br><br><span class="black"><b>Meeting Scheduling:</b><br><br>Please rate the usefulness of the following features:</span><br>
+                                  						<span class="black"> 
+                                    					<select name="invitation">
+                                      					<option>Invitation E-mail</option>
+                                      					<option>Didn't receive</option>
+                                      					<option>Intuitive</option>
+                                      					<option>Not intuitive</option>
+                                    					</select><br>
+                                    					<select name="calendar">
+                                      					<option selected>Add to outlook calendar</option>
+                                      					<option>Didn't try</option>
+                                      					<option>Didn't work</option>
+                                      					<option>Not useful</option>
+                                      					<option>Somewhat useful</option>
+                                      					<option>Useful</option>
+                                      					<option>Very useful</option>
+                                    					</select><br>
+                                    					<select name="rsvp">
+                                      					<option>RSVP/Decline options</option>
+                                      					<option>Don't try</option>
+                                      					<option>Didn't work</option>
+                                      					<option>Not useful</option>
+                                      					<option>Somewhat useful</option>
+                                     					<option>Useful</option>
+                                     					<option>Very useful</option>
+                                    					</select><br>
+                                   						<select name="doc">
+                                      					<option>&quot;Edit Doc.&quot;/&quot;View 
+                                     					Doc.&quot;</option>
+                                      					<option>Didn't try</option>
+                                      					<option>Didn't work</option>
+                                      					<option>Not useful</option>
+                                      					<option>Somewhat useful</option>
+                                      					<option>Useful</option>
+                                      					<option>Very useful</option>
+                                    					</select>
+                                    					</span>														
+														</td>
+													</tr>
+													<tr>
+														<td>
+														<p><BR><span class="black">What can we do to make it better?</span>
+														<div align="left"><span class="black">
+														<input type="hidden" name="DEFAULT" value="">
+	                              						<textarea name="meetings" rows="3" cols="60"></textarea></span></div>
+														</td>
+													</tr>	
+													<tr>
+														<td>
+														<p><BR><br><br><b><span class="black">* Comments & Suggestions</span></b>
+														<div align="left"><span class="black">
+														<input type="hidden" name="DEFAULT" value="">
+	                              						<textarea name="comment" rows="5" cols="60"></textarea></span></div>
+														</td>
+													</tr>	
+													<tr>
+														
+                                <td align="center"> 
+                                  <p><br>
+                                    <input type="submit" value="SUBMIT">
+                                    <input type="reset" value="RESET">
+                                  <p><span class="blackl"> ANABAS does not want to 
+                                  						receive confidential or proprietary information 
+                                  						from you through our website. Please note that 
+                                  						any information or material sent to ANABAS through 
+                                  						our web site will be deemed not to be confidential. 
+                                  						By sending ANABAS any information or material, 
+                                  						you grant ANABAS an unrestricted, irrevocable 
+                                  						license to use, reproduce, display, perform, 
+                                  						modify, transmit and distribute those materials 
+                                  						or information, and you also agree that ANABAS 
+                                  						is free to use any ideas, concepts, know-how 
+                                  						or techniques that you send us for any purpose.<br>
+                                  						<br></span></td>
+													</tr>
+													
+												</table>
+											</form>
+											</center>
+											</td>										
+											<td width="40"></td>										
+										</tr>
+									</table>
+								</td>
+							</tr>						
+						</table>
+					</td>					
+				</tr>
+			</table>
+		</td>
+		<td width="100%" valign="top"><img src="images/blue.gif" width="100%" height="84"></td>
+	</tr>
+</table>
+
+</body>
+</html>
